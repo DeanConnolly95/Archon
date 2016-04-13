@@ -23,25 +23,14 @@
         <!-- CONTENT DIV (LEFT) !-->
         <div class="col-md-9">
             <?php
-              // Set the default name
-              $action = 'intro';
-              // Specify some disallowed paths
-              $disallowed_paths = array('header', 'footer', 'admin', 'config', 'data', 'users');
-              if (!empty($_GET['action'])) {
-                $tmp_action = basename($_GET['action']);
-                // If it's not a disallowed path, and if the file exists, update $action
-                if (!in_array($tmp_action, $disallowed_paths) && file_exists("interfaces/{$tmp_action}.php"))
-                  $action = $tmp_action;
-                }
-              // Include $action
-              include("interfaces/$action.php");
+                include "interfaces/news.php";
             ?>
         </div>
 
         <!-- SPACER DIV (RIGHT) !-->
         <div class="col-md-3">
             <?php
-                include "interfaces/login.php";
+                include "interfaces/userProfile.php";
             ?>
         </div>
     </div>
